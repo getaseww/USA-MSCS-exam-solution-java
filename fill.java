@@ -21,7 +21,6 @@ class Main {
                     temp++;
                 }
             }
-            System.out.println(Arrays);
         return arr2;
     }
     public static void main(String[] args) {
