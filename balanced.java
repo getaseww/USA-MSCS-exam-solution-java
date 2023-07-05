@@ -5,17 +5,15 @@ class Main {
 
     public static int isBalanced(int[] nums){
         for(int i=0;i<nums.length;i++){
-            if(!(i%2==0&&nums[i]%2==0)||!(i%2!=0&&nums[i]%2!=0)){
-                System.out.print(i+"hello"+i%2+"Hello"+nums[i]%2);
+            if((i%2==0&&nums[i]%2!=0)||(i%2!=0&&nums[i]%2==0)){
                 return 0;
             };
         }
-
         return 1;
     }
 
     public static void main(String[] args) {
-        int[] nums={6,7,2,3,12};
+        int[] nums={6,6,2,3,12};
         System.out.println(isBalanced(nums));
     }
 }
