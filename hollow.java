@@ -1,8 +1,8 @@
 
 class Main {
 
-    public static int isHollow(int[] nums) {
-        if(nums.length<3) return 0;
+    public static boolean isHollow(int[] nums) {
+        if(nums.length<3) return true;
         for(int i=0;i<nums.length;i++){
             if(nums[i]==0&&nums.length>3){
                 
@@ -13,6 +13,7 @@ class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println(hasKSmallFactors(10,20));
+        int[] nums={10,20};
+        System.out.println(isHollow(nums));
     }
 }
