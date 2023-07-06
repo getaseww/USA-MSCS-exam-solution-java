@@ -1,27 +1,33 @@
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
-import java.util.*;
+/*
+Write a function named minDistance that returns the smallest distance between two factors of a
+number. For example, consider 13013 = 1*7*11*13. Its factors are 1, 7, 11, 13 and 13013.
+minDistance(13013) would return 2 because the smallest distance between any two factors is 2 (13 -
+11 = 2). As another example, minDistance (8) would return 1 because the factors of 8 are 1, 2, 4, 8
+and the smallest distance between any two factors is 1 (2 – 1 = 1).
 
+*/
 class Main {
 
-    public static int minDistance(int n){
-        List<Integer> factors=new ArrayList<Integer>();
-        for(int i=1;i<=n;i++){
-            if(n%i==0){
-                factors.add(i);
+    public static int minDistance(int n) {
+        int min = n;
+        for (int i = 1; i < n; i++) {
+            if (n % i == 0) {
+                for (int j = i + 1; j < n; j++) {
+                    if (n % j == 0) {
+
+                        if (min > j - i)
+                            min = j - i;
+
+                        break;
+                    }
+                }
             }
         }
 
-        if(factors.size()>=2){
-        return factors[factors.size()-1]-factors[factors.size()-2];
-        }else if(factors.size()==1){
-            return factors[0];
-        }else{
-            return 0;
-        }
-
+        return min;
     }
+
     public static void main(String[] args) {
-        System.out.println(minDistance(10));
+        System.out.println(minDistance(13013));
     }
 }
